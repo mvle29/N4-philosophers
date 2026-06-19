@@ -24,7 +24,7 @@ void	action_first_think2(t_params *p, int id)
 	impair_philo = id + pair;
 	tt_think = p->tt_die * 2;
 	if (p->nb_philo != 1)
-		tt_think = pair * p->tt_eat + p->tt_eat * (impair_philo / 2) / (p->nb_philo / 2);
+		tt_think = pair * p->tt_eat + p->tt_eat * ((impair_philo / 2) / (p->nb_philo / 2));
 	ft_usleep(tt_think);
 }
 
