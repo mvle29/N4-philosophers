@@ -12,6 +12,22 @@
 
 #include "philo.h"
 
+void	action_first_think2(t_params *p, int id)
+{
+	int	tt_think;
+	int	impair_philo;
+	int	pair;
+
+	pair = 0;
+	if (id % 2 == 0)
+		pair = 1;
+	impair_philo = id + pair;
+	tt_think = p->tt_die * 2;
+	if (p->nb_philo != 1)
+		tt_think = pair * p->tt_eat + p->tt_eat * (impair_philo / 2) / (p->nb_philo / 2);
+	ft_usleep(tt_think);
+}
+
 int	action_first_think(t_params *p, t_philo *philo, int id)
 {
 	int	stop;
@@ -20,15 +36,7 @@ int	action_first_think(t_params *p, t_philo *philo, int id)
 	if (!stop)
 	{
 		if (p->nb_philo % 2 == 1)
-		{
-			if (p->nb_philo == 1)
-				ft_usleep((p->tt_die * 2));
-			else if (id % 2 == 1)
-				ft_usleep((p->tt_eat * (id / 2)) / (p->nb_philo / 2));
-			else
-				ft_usleep(p->tt_eat + (p->tt_eat * ((id - 1) / 2))
-					/ ((p->nb_philo / 2) - 1));
-		}
+			action_first_think2(p, id);
 		else
 		{
 			if (id % 2 == 0)
@@ -49,14 +57,14 @@ int	action_try_think(t_params *p, t_philo *philo, int id)
 		if (p->nb_philo % 2 == 0)
 		{
 			tt_think = p->tt_eat - p->tt_sleep;
-			if (tt_think < 0)
+			if (tt_think < 0 || p->tt_die <= tt_think)
 				tt_think = 1;
 			ft_usleep(tt_think);
 		}
 		else
 		{
 			tt_think = p->tt_eat + p->tt_eat / 2 - p->tt_sleep;
-			if (tt_think < 0)
+			if (tt_think < 0 || p->tt_die <= tt_think)
 				tt_think = 1;
 			ft_usleep(tt_think);
 		}

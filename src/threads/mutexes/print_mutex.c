@@ -27,8 +27,8 @@ int	philo_print_getstop(t_data *data, int id, char *to_print, int print)
 void	monitor_setstop(t_data *data, int id, int death)
 {
 	pthread_mutex_lock(&data->print_mutex);
+	data->stop = 1;
 	if (death == 1 && id > 0)
 		printf("%ld %d %s\n", get_time_ms() - data->start, id, "died");
-	data->stop = 1;
 	pthread_mutex_unlock(&data->print_mutex);
 }

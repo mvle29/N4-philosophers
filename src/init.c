@@ -83,7 +83,6 @@ int	init_threads(t_data *data, t_philo *philos)
 {
 	int	i;
 
-	printf("start_sim\n");
 	i = 0;
 	data->start = get_time_ms();
 	while (i < data->params.nb_philo)

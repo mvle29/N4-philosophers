@@ -12,6 +12,10 @@
 
 #include "philo.h"
 
+/*end == 1 : meals limite atteinte (pas de print de death)
+end == 1 : (utilise aussi en cas d erreur mutex lock / unlock pr end le prog)
+end == 2 : philo est mort (print de death)*/
+
 int	monitor_read_meal(t_philo *philo)
 {
 	int	end;

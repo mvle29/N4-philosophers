@@ -56,7 +56,6 @@ int	main(int agc, char **agv)
 	}
 	if (!init_threads(&data, data.philos))
 	{
-		printf("sim couldnt start\n");
 		cleanup(&data);
 		return (error_init());
 	}
