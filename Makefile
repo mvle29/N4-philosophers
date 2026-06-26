@@ -10,7 +10,7 @@ SRC_MUTEXES_FILES = meal_mutex.c print_mutex.c
 SRC_MUTEXES = $(foreach F,$(SRC_MUTEXES_FILES),$(SRC_MUTEXES_DIR)$F)
 
 SRC_THREADS_DIR = threads/
-SRC_THREADS_FILES = actions.c thread_routine.c $(SRC_MUTEXES)
+SRC_THREADS_FILES = actions.c actions2.c thread_routine.c $(SRC_MUTEXES)
 SRC_THREADS = $(foreach F,$(SRC_THREADS_FILES),$(SRC_THREADS_DIR)$F)
 
 SRC_DIR = src/
