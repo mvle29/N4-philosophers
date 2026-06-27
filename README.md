@@ -6,7 +6,7 @@ This project is a simulation, where multiple "people" (philosophers, which are r
 Each philosopher has a fork to its right and to its left (except if it's just one philosopher, then he only has one fork), and they are seated on a rounded table : therefore the right fork of one philosopher is the left of another one (same exception as previously). To eat (and so : stay alive), they need 2 forks, so all the philosophers must take turns eating, and they mustn't communicate with each other. All of them take the same time to eat a meal and to sleep, but their thinking process may take as much time as they want.
 
 The difficulty here was
-1. designing an algorithm that would allow them to take turns eating in the most efficient way, so they don't die in the most possible cases
+1. designing an algorithm that would allow them to take turns eating in the most efficient way, so they don't die in the most possible cases.
 2. handling threads, and "mutexes" which is like a lock that only allows one thread (philosopher) to detain it at a time, just like the forks in the simulation. It can also be used to allow only one thread at a time to access a particular variable/data information.
 
 ## INSTRUCTIONS
