@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <sys/time.h>
-# include "libft.h"
 # include <string.h>
 
 typedef struct s_params
@@ -75,12 +74,16 @@ int		action_try_sleep(t_params *p, t_philo *philo, int id);
 
 void	monitor_setstop(t_data *data, int id, int death);
 int		philo_print_getstop(t_data *data, int id, char *to_print, int print);
-int		monitor_read_meal(t_philo *philo);
+int		monitor_read_meal(t_data *data, t_philo *philo, int i);
 void	philo_set_meal(t_philo *philo);
 
 int		cleanup(t_data *data);
 
 int		error_init(void);
 int		error_arg(void);
+
+int		ft_atoi(const char *nptr);
+int		ft_isdigit(char c);
+int		ft_isspace(int c);
 
 #endif

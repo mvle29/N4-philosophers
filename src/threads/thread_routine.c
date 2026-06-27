@@ -40,14 +40,11 @@ int	monitor_routine_verify_meals(t_data *data)
 	eat_lim = 0;
 	while (i < data->params.nb_philo)
 	{
-		status = monitor_read_meal(&data->philos[i]);
+		status = monitor_read_meal(data, &data->philos[i], i + 1);
+		if (status == 2)
+			return (1);
 		if (status == 1)
 			eat_lim++;
-		else if (status == 2)
-		{
-			monitor_setstop(data, i + 1, 1);
-			return (1);
-		}
 		i++;
 	}
 	if (eat_lim == data->params.nb_philo)
@@ -69,7 +66,7 @@ void	*monitor_routine(void *data)
 		status = monitor_routine_verify_meals(d);
 		if (status == 1)
 			break ;
-		usleep(250);
+		usleep(100);
 	}
 	return (NULL);
 }

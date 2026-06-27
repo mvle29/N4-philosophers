@@ -16,7 +16,7 @@
 end == 1 : (utilise aussi en cas d erreur mutex lock / unlock pr end le prog)
 end == 2 : philo est mort (print de death)*/
 
-int	monitor_read_meal(t_philo *philo)
+int	monitor_read_meal(t_data *data, t_philo *philo, int i)
 {
 	int	end;
 	int	meals_lim;
@@ -25,7 +25,10 @@ int	monitor_read_meal(t_philo *philo)
 	meals_lim = philo->data->params.eat_limit;
 	pthread_mutex_lock(&philo->meal_mutex);
 	if (get_time_ms() - philo->last_meal >= philo->data->params.tt_die)
+	{
+		monitor_setstop(data, i, 1);
 		end = 2;
+	}
 	else if (meals_lim >= 0 && philo->meals_eaten >= meals_lim)
 		end = 1;
 	pthread_mutex_unlock(&philo->meal_mutex);

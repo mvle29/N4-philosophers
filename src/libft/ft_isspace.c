@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 22:15:02 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/10 22:15:02 by marvin           ###   ########.fr       */
+/*   Created: 2026/04/07 15:14:24 by marvin            #+#    #+#             */
+/*   Updated: 2026/04/07 15:14:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+//#include "libft.h"
 
-int	error_init(void)
+int	ft_isspace(int c)
 {
-	printf("erreur d'initialisation\n");
-	return (1);
-}
-
-int	error_arg(void)
-{
-	printf("erreur d'arguments : arg invalides\n");
-	return (1);
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	return (0);
 }

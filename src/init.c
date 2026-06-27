@@ -27,7 +27,7 @@ int	init_forks(t_data *data)
 			while (--i >= 0)
 				pthread_mutex_destroy(&data->forks[i]);
 			free(data->forks);
-			data->forks = 0;
+			data->forks = NULL;
 			return (0);
 		}
 		i++;
@@ -56,7 +56,7 @@ int	init_philos(t_data *data)
 			while (--i >= 0)
 				pthread_mutex_destroy(&data->philos[i].meal_mutex);
 			free(data->philos);
-			data->philos = 0;
+			data->philos = NULL;
 			return (0);
 		}
 		i++;
