@@ -79,9 +79,6 @@ void	philo_set_meal(t_philo *philo);
 
 int		cleanup(t_data *data);
 
-int		error_init(void);
-int		error_arg(void);
-
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(char c);
 int		ft_isspace(int c);

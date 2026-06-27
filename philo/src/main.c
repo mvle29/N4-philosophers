@@ -49,7 +49,7 @@ int	main(int agc, char **agv)
 	memset(&data, 0, sizeof(t_data));
 	if (!parse(agc, agv, &data.params) || data.params.nb_philo == 0
 		|| data.params.eat_limit == 0)
-		return (error_arg());
+		return (1);
 	if (!init_data(&data))
 	{
 		cleanup(&data);

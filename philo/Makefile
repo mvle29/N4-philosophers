@@ -1,7 +1,7 @@
 NAME = philo
 TEST = test
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 HEADER = include/
 INCLUDE = $(foreach H,$(HEADER),-I $H)
 
@@ -18,7 +18,7 @@ SRC_LIBFT_FILES = ft_isspace.c ft_isdigit.c ft_atoi.c
 SRC_LIBFT = $(foreach F,$(SRC_LIBFT_FILES),$(SRC_LIBFT_DIR)$F)
 
 SRC_DIR = src/
-SRC_FILES = main.c parse.c error.c cleanup.c init.c $(SRC_THREADS) $(SRC_LIBFT)
+SRC_FILES = main.c parse.c cleanup.c init.c $(SRC_THREADS) $(SRC_LIBFT)
 SRC = $(foreach F,$(SRC_FILES),$(SRC_DIR)$F)
 
 OBJ = $(SRC:.c=.o)
