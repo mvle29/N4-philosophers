@@ -47,7 +47,8 @@ int	main(int agc, char **agv)
 	t_data	data;
 
 	memset(&data, 0, sizeof(t_data));
-	if (!parse(agc, agv, &data.params) || data.params.nb_philo == 0 || data.params.eat_limit == 0)
+	if (!parse(agc, agv, &data.params) || data.params.nb_philo == 0
+		|| data.params.eat_limit == 0)
 		return (error_arg());
 	if (!init_data(&data))
 	{
