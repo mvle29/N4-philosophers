@@ -21,7 +21,7 @@ then run :<br>
 make
 ```
 
-you will then have to run the program with the following argument. Argument 4 (eat_limit) is optional :<br>
+you will then have to run the program with the following arguments. Argument 4 (eat_limit) is optional :<br>
 ```bash
 ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep eat_limit
 ```
