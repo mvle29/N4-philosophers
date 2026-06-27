@@ -3,7 +3,7 @@
 ## DESCRIPTION
 
 This project is a simulation, where multiple "people" (philosophers, which are represented as threads with a certain routine in the project) must try to avoid dying by starvation. All of the philosophers live their lives by alternating between thinking, eating, sleeping. If a philosopher does not eat in a certain period of time determined at the beginning (time_to_die), he dies, and the simulation stops.<br>
-Each philosopher has a fork to its right and to its left (except if it's just one philosopher, then he only has one fork), and they are seated on a rounded table : therefore the right fork of one philosopher is the left of another one (same exception as previously). To eat (and so : stay alive), they need 2 forks, so all the philosophers must take turns eating, and they mustn't communicate with each other. All of them take the same time to eat a meal and to sleep, but their thinking process may take as much time as they want.
+Each philosopher has a fork to his right and to his left (except if it's just one philosopher, then he only has one fork), and they are seated on a rounded table : therefore the right fork of one philosopher is the left of another one (same exception as previously). To eat (and so : stay alive), they need 2 forks, so all the philosophers must take turns eating, and they mustn't communicate with each other. All of them take the same time to eat a meal and to sleep, but their thinking process may take as much time as they want.
 
 The difficulty here was
 1. designing an algorithm that would allow them to take turns eating in the most efficient way, so they don't die in the most possible cases.
